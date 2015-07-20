@@ -24,7 +24,8 @@ class SongsController < ApplicationController
     end
   end
 
-  def delete
+  def delete_from_amazon
+    binding.pry
     if (params[:song])
       AWS::S3::S3Object.find(params[:song], ENV["AWS_BUCKET_NAME"]).delete
       redirect_to root_path

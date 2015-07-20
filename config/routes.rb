@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   devise_for :users
   post "songs/upload", :as => "upload"
+  # get "songs/delete_from_amazon", :as => "delete_from_amazon"
+
   get "songs/delete", :as => "delete"
 
   resources :songs, only: [:show, :index, :new, :create, :edit, :update] do
